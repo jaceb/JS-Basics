@@ -133,7 +133,7 @@ counter.dec(); // 10
 
 
   for (var i = 0; i <= 5; i++) {
-    setTimeout(function() {
+    setTimeout(function(i) {
       console.log(i)
     }, i * 1000)
   }
@@ -161,5 +161,3 @@ counter.dec(); // 10
 
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
-
-
