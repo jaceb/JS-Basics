@@ -30,11 +30,12 @@ var callJake = callFriend();
 */  //Code Here
 function makeCounter() {
 var total = 1;
-total++;
-
+return function() {
+return total++;
+}
 }
 
-Uncomment this once you make your function
+// Uncomment this once you make your function
   var count = makeCounter();
   count(); // 1
   count(); // 2
@@ -49,6 +50,14 @@ Uncomment this once you make your function
 function counterFactory(value) {
   return {}
     // Code inc function
+    return function inc() {
+      value++;
+      return value;
+    }
+    return function dec() {
+      value--;
+      return value;
+    }
     // Code dec function
 }
 counter = counterFactory(10);
@@ -83,7 +92,7 @@ counter = counterFactory(10);
 // So that it logs ( 1 then 2 then 3, etc). Run this code in your console to see what the output is.
   for (var i = 0; i <= 5; i++) {
     setTimeout(function() {
-      console.log(i)
+      console.log(i)git
     }, i * 1000)
   }
   // To make this code work you will need to create a new scope for every iteration.
